@@ -58,8 +58,10 @@ int main ()
 
 		printf ("bienvenue aventurier ou veux tu aller ? \n Tapez 'debut' pour aller au monde de dessus \n tapez 'milieu' pour aller monde du milieu  \n tapez 'enfer' pour aller monde du dessous  \n\n");
 		scanf ("%s", choix);
+	while (fin == 0){
+		choixDeplacements=0;
 		if(strcmp(choix, "debut") == 0){
-				printf ("Vous voila dans le monde de dessus ! \n");
+				printf ("Vous voila dans le monde de dessus ! %s \n",  lieu1.description);
 				printf ("souhaitez-vous changer de lieu ? \n oui .1\n non .2\n");
 				scanf ("%d", &choixDeplacements);
 	
@@ -83,9 +85,9 @@ int main ()
 			
 			
 			
-			
+			choixDeplacements=0;
 		if (strcmp(choix, "milieu") == 0){
-				printf ("Vous voila dans le monde du milieu ! \n ");
+				printf ("Vous voila dans le monde du milieu ! %s\n ", lieu2.description);
 				printf ("souhaitez-vous changer de lieu ? \n oui .1\n non .2\n");
 				scanf ("%d", &choixDeplacements);
 	
@@ -106,8 +108,9 @@ int main ()
 				printf ("pas de soucis bonne chance aventurier \n");
 			}
 		}
+		choixDeplacements=0;
 		if (strcmp(choix, "enfer") == 0){
-			printf ("Vous voila dans le monde de dessous ! \n ");
+			printf ("Vous voila dans le monde de dessous ! %s  \n ",  lieu3.description);
 			printf ("souhaitez-vous changer de lieu ? \n oui .1\n non .2\n");
 			scanf ("%d", &choixDeplacements);
 	
@@ -128,6 +131,6 @@ int main ()
 				printf ("ahaha, vous etes tombez bien bas ahaha \n");
 			}
 		}
-			
+	}		
 	return 0;
 }
